@@ -1,0 +1,8 @@
+// LOCALHOST 
+###
+GET http://localhost:8080/contacts
+
+
+// PRODUCTION Deploy 
+### 
+GET https://cse341-instructor.herokuapp.com/contacts
