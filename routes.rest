@@ -59,12 +59,12 @@ PUT https://cse-341-aaron-calahorra.onrender.com/contacts/6329aa69b3b605e073fa79
 Content-Type: application/json
 
 {
-  "firstName": "Sergio",
+  "firstName": "Lluvia",
   "lastName": "Sierra",
-  "email": "sergios@test.com",
-  "favoriteColor": "Blue",
-  "birthday": "02/08/23"
+  "email": "lluviasierra@test.com",
+  "favoriteColor": "Gray",
+  "birthday": "29/08/23"
 }
 
 ### Delete contact
-DELETE https://cse-341-aaron-calahorra.onrender.com/contacts/6329aa69b3b605e073fa794b HTTP/1.1
+DELETE https://cse-341-aaron-calahorra.onrender.com/contacts/632bd5bbc5d1696d42d15ea3 HTTP/1.1
