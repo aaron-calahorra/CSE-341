@@ -13,7 +13,7 @@ router.use('/contacts', contact);
 router.use(
   '/',
   (docData = (req, res) => {
-    let docData = "Hello world!";
+    let docData = "Hello world! I'm alive";
     res.send(docData);
   })
 );
