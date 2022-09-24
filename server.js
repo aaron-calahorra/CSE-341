@@ -10,7 +10,6 @@ app
   .use(bodyParser.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    //res.send('Hello, Lluvia!');
     next();
   })
   .use('/', require('./routes'));
