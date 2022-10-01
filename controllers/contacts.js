@@ -14,6 +14,9 @@ const getAll = async (req, res, next) => {
 };
 
 const getSingle = async (req, res, next) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid contact id to find a contact.');
+  } else {
   try {
     const userId = new ObjectId(req.params.id);
     const result = await mongodb
@@ -28,7 +31,7 @@ const getSingle = async (req, res, next) => {
   } catch (err) {
     res.status(500).json({ message: err.message });
   }  
-};
+}};
 
 const createContact = async (req, res) => {
   try {
@@ -51,6 +54,9 @@ const createContact = async (req, res) => {
 };
 
 const updateContact = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid contact id to find a contact.');
+  } else {
   try {
     const userId = new ObjectId(req.params.id);
     const contact = {
@@ -74,9 +80,12 @@ const updateContact = async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-};
+}};
 
 const deleteContact = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid contact id to find a contact.');
+  } else {
   try {
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('contacts').remove({ _id: userId }, true);
@@ -89,7 +98,7 @@ const deleteContact = async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-};
+}};
 
 module.exports = {
   getAll,
